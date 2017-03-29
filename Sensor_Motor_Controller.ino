@@ -1,6 +1,6 @@
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <SPI.h>
-#include <Wire.h>      // this is needed even tho we aren't using it
+#include <Wire.h>     
 #include <Adafruit_ILI9341.h>
 #include <Adafruit_STMPE610.h>
 #include "SPI.h"
@@ -8,17 +8,15 @@
 #include "Adafruit_ILI9341.h"
 #include <Fonts/FreeMono12pt7b.h>
 
-// This is calibration data for the raw touch data to the screen coordinates
+//calibration data for the raw touch data to the screen coordinates
 #define TS_MINX 150
 #define TS_MINY 130
 #define TS_MAXX 3800
 #define TS_MAXY 4000
 
-// The STMPE610 uses hardware SPI on the shield, and #8
 #define STMPE_CS 8
 Adafruit_STMPE610 ts = Adafruit_STMPE610(STMPE_CS);
 
-// The display also uses hardware SPI, plus #9 & #10
 #define TFT_CS 10
 #define TFT_DC 9
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
